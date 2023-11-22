@@ -2,16 +2,42 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        System.out.println("Constructor Test");
+        AirPurifier f1 = new AirPurifier("Pro","001","White");
+        AirPurifier.GiveInfo(f1);
+        AirPurifier f2 = new AirPurifier("002");
+        AirPurifier.GiveInfo(f2);
+        AirPurifier f3 = new AirPurifier("003");
+        AirPurifier.GetNumOfPurifier();
+        AirPurifier f4 = new AirPurifier("004");
+        AirPurifier f5 = new AirPurifier("Pro","005","Black");
+        AirPurifier.GiveInfo(f3);
+        AirPurifier.GiveInfo(f4);
+        AirPurifier.GiveInfo(f5);
+        AirPurifier.GetNumOfPurifier();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("\nCase 1 : Button Off");
+        AirPurifier.GiveStatus(f1);
+        f1.SetFanSpeed(999);
+        f1.SetFanSpeed(-2);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("\nCase 2 : Set Fan Speed");
+        f1.TurnSwitch();
+        AirPurifier.GiveStatus(f1);
+        f1.SetFanSpeed(999);
+        f1.SetFanSpeed(-2);
+        f1.SetFanSpeed(46);
+        AirPurifier.GiveStatus(f1);
+        f1.SetFanSpeed(100);
+        AirPurifier.GiveStatus(f1);
+
+        System.out.println("\nCase 3 : Relax Mode");
+        f1.SetRelaxMode();
+        AirPurifier.GiveStatus(f1);
+
+        System.out.println("\nCase 4 : Button Off & Relax Mode");
+        f1.TurnSwitch();
+        AirPurifier.GiveStatus(f1);
+        f1.SetRelaxMode();
     }
 }
